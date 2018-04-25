@@ -15,6 +15,7 @@ import { MoreComponent } from './more/more.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
+  {path: 'pokemon', redirectTo: ''},
   {path: 'pokedexes', component: PokedexesComponent},
   {path: 'moves', component: MovesComponent},
   {path: 'pokemon/:pokeID', component: PokemonComponent},
