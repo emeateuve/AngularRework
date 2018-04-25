@@ -11,13 +11,15 @@ import { HeaderComponent } from './header/header.component';
 import { PokedexesComponent } from './pokedexes/pokedexes.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { MovesComponent } from './moves/moves.component';
+import { MoreComponent } from './more/more.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'pokedexes', component: PokedexesComponent},
   {path: 'moves', component: MovesComponent},
   {path: 'pokemon/:pokeID', component: PokemonComponent},
-  {path: 'moves/:moveID', component: MovesComponent}
+  {path: 'moves/:moveID', component: MovesComponent},
+  {path: 'more', component: MoreComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     PokedexesComponent,
     PokemonComponent,
-    MovesComponent
+    MovesComponent,
+    MoreComponent
   ],
   imports: [
     BrowserModule,
