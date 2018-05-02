@@ -6,10 +6,18 @@ import {HttpClient} from "@angular/common/http";
 @Injectable()
 export class PokeserviceService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public pokeHttp: HttpClient) { }
 
   pokeSearch(pokeName): Observable<any>{
-    return this.http.get('http://pokeapi.co/api/v2/pokemon/' + pokeName);
+    return this.pokeHttp.get('http://pokeapi.co/api/v2/pokemon/' + pokeName);
   };
+
+  pokeMovesSearch(): Observable<any>{
+    return this.pokeHttp.get('http://pokeapi.co/api/v2/move/2');
+  }
+
+  pokedexesSearch(): Observable<any>{
+    return this.pokeHttp.get('https://pokeapi.co/api/v2/pokedex/kanto/')
+  }
 
 }

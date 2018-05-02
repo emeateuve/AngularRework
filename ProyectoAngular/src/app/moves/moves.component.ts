@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PokeserviceService} from "../pokeservice.service";
 
 @Component({
   selector: 'app-moves',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MovesComponent implements OnInit {
 
-  constructor() { }
+  public pokeMove: string;
+
+  constructor(private pokePetition: PokeserviceService) { }
 
   ngOnInit() {
+    this.pokePetition.pokeMovesSearch().subscribe(pokeMove =>{
+      this.pokeMove = pokeMove;
+      console.log('Movimiento: ', this.pokeMove.name);
+    });
+
+
   }
 
 }
