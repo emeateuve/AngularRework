@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, RouterLink, Routes } from "@angular/router";
 import { FormsModule } from '@angular/forms';
+import {HttpClient, HttpClientModule} from "@angular/common/http";
+
 
 import { PokeserviceService } from "./pokeservice.service";
 
@@ -40,6 +42,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
     FormsModule
   ],

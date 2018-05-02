@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { FormsModule } from '@angular/forms';
+import {PokeserviceService} from "../pokeservice.service";
 
 
 declare var jQuery:any;
@@ -13,15 +12,21 @@ declare var $:any;
 })
 export class HeaderComponent implements OnInit {
 
-  public pokeInput = 'ddddd';
+  public pokeInput = '';
+  public pokemon: string;
 
-  constructor() { }
+
+  constructor(private pokePetition: PokeserviceService) { }
 
   ngOnInit() {
   }
-
+  
   buscarPokemon(){
-    console.log('Este es el nombre: ' + this.pokeInput);
+    console.log('Antes de la petición: ');
+    this.pokePetition.pokeSearch(this.pokeInput).subscribe(pokeResult =>{
+      this.pokemon = pokeResult;
+      console.log('Resultado: ', this.pokemon);
+    });
   }
 
 }
