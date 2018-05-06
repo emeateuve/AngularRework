@@ -26,7 +26,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" [(ngModel)]="pokeInput" id="textoInput" name="pokeInput" type="text" placeholder="Search...">
+      <input class="form-control mr-sm-2" [(ngModel)]="pokeInput" id="textoInput" name="pokeInput" type="text" placeholder="Name or ID...">
       <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="buscarPokemon()" [routerLink]="['/pokemon/' + pokeInput]">Search pokémon!</button>
     </form>
   </div>

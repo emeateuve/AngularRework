@@ -16,6 +16,7 @@ import { PokedexesComponent } from './pokedexes/pokedexes.component';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { MovesComponent } from './moves/moves.component';
 import { MoreComponent } from './more/more.component';
+import { PokedexDetailComponent } from './pokedex-detail/pokedex-detail.component';
 
 
 
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'pokemon', redirectTo: ''},
   {path: 'pokedexes', component: PokedexesComponent},
+  {path: 'pokedexes/:pokedexID', component: PokedexDetailComponent},
   {path: 'moves', component: MovesComponent},
   {path: 'pokemon/:pokeID', component: PokemonComponent},
   {path: 'moves/:moveID', component: MovesComponent},
@@ -38,7 +40,8 @@ const appRoutes: Routes = [
     PokedexesComponent,
     PokemonComponent,
     MovesComponent,
-    MoreComponent
+    MoreComponent,
+    PokedexDetailComponent
   ],
   imports: [
     BrowserModule,
