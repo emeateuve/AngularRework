@@ -13,6 +13,7 @@ export class PokedexesComponent implements OnInit {
 
   public pokedexID: any;
   public pokedexArray = [
+    {pokedexName: 'National', pokedexID: 1, pokeImage: 'kanto_map.jpg'},
     {pokedexName: 'Kanto', pokedexID: 2, pokeImage: 'kanto_map.jpg'},
     {pokedexName: 'Original-Johto', pokedexID: 2, pokeImage: 'johto_map.png'},
     {pokedexName: 'Hoenn', pokedexID: 3, pokeImage: 'hoenn_map.png'},

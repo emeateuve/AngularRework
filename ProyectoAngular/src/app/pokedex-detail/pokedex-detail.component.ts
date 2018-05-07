@@ -17,18 +17,20 @@ export class PokedexDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private pokePetition: PokeserviceService, public pokedexComponent: PokedexesComponent) {
 
   }
+  public pokedexName;
   public pokedex;
 
   ngOnInit() {
     this.route.params.subscribe(parameter => {
-      this.pokedex = parameter['pokedexID'];
+      this.pokedexName = parameter['pokedexID'];
       this.loadPokedex();
     });
   }
 
   loadPokedex(){
-    this.pokePetition.pokedexesSearch(this.pokedex).subscribe(pokedexName =>{
-      console.log('Objeto devuelto: ', pokedexName);
+    this.pokePetition.pokedexesSearch(this.pokedexName).subscribe(pokedexName =>{
+      this.pokedex = pokedexName;
+      console.log('Objeto devuelto: ', this.pokedex);
     })
   }
 

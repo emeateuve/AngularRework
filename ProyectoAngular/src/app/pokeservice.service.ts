@@ -23,5 +23,4 @@ export class PokeserviceService {
     return this.pokeHttp.get('https://pokeapi.co/api/v2/pokedex/' + pokedexID.toLowerCase());
   }
 
-
 }
