@@ -8,6 +8,8 @@ export class PokeserviceService {
 
   constructor(public pokeHttp: HttpClient) { }
 
+  public pokedexID: any;
+
   pokeSearch(pokeName): Observable<any>{
     return this.pokeHttp.get('http://pokeapi.co/api/v2/pokemon/' + pokeName.toLowerCase());
   };
@@ -16,8 +18,10 @@ export class PokeserviceService {
     return this.pokeHttp.get('http://pokeapi.co/api/v2/move/2');
   }
 
-  pokedexesSearch(): Observable<any>{
-    return this.pokeHttp.get('https://pokeapi.co/api/v2/pokedex/1/')
+  pokedexesSearch(pokedexID): Observable<any>{
+    this.pokedexID = pokedexID;
+    return this.pokeHttp.get('https://pokeapi.co/api/v2/pokedex/' + pokedexID.toLowerCase());
   }
+
 
 }

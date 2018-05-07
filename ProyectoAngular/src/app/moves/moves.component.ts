@@ -8,7 +8,7 @@ import {PokeserviceService} from "../pokeservice.service";
 })
 export class MovesComponent implements OnInit {
 
-  public pokeMove: string;
+  public pokeMove: any;
 
   constructor(private pokePetition: PokeserviceService) { }
 

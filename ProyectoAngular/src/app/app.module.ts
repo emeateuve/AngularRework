@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes, {enableTracing: false}),
     FormsModule
   ],
-  providers: [PokeserviceService],
+  providers: [PokeserviceService, PokedexesComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
