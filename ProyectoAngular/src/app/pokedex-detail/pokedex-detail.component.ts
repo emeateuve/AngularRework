@@ -21,6 +21,8 @@ export class PokedexDetailComponent implements OnInit {
   public pokedex;
   public pokemonsArray;
 
+  pokemonid = 'hola'
+
   ngOnInit() {
     this.route.params.subscribe(parameter => {
       this.pokedexName = parameter['pokedexID'];
