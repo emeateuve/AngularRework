@@ -15,6 +15,11 @@ export class PokemonComponent implements OnInit {
 
   public pokemonName;
   public pokemon;
+  public pokemonLoaded = false;
+
+  public pokemonArrayStats;
+  public pokemonArrayAbilities;
+  public pokemonArrayTypes;
 
   ngOnInit() {
     this.route.params.subscribe(parameter => {
@@ -26,7 +31,16 @@ export class PokemonComponent implements OnInit {
   loadPokemon() {
     this.pokePetition.pokeSearch(this.pokemonName).subscribe(pokemonData => {
       console.log('Pokemon buscado: ', pokemonData);
+
       this.pokemon = pokemonData;
+      this.pokemonArrayStats = pokemonData.stats;
+      this.pokemonArrayAbilities = pokemonData.abilities;
+      this.pokemonArrayTypes = pokemonData.types;
+
+      this.pokemonLoaded = true;
+      // console.log('Array tipos: ',this.pokemonArrayTypes);
+      // console.log('Array habilidades: ',this.pokemonArrayAbilities);
+      // console.log('Array stats: ',this.pokemonArrayStats);
     })
   }
 }
