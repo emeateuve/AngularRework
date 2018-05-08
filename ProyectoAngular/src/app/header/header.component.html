@@ -15,8 +15,18 @@
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pokedexes']">PokéDexes</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" id="pokeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">PokéDexes</a>
+        <div class="dropdown-menu" aria-labelledby="pokeDropdown">
+          <a class="dropdown-item" [routerLink]="['/pokedexes/national']">National</a>
+          <a class="dropdown-item" [routerLink]="['/pokedexes/kanto']">Kanto</a>
+          <a class="dropdown-item" [routerLink]="['/pokedexes/original-johto']">Johto</a>
+          <a class="dropdown-item" [routerLink]="['/pokedexes/hoenn']">Hoenn</a>
+          <a class="dropdown-item" [routerLink]="['/pokedexes/original-sinnoh']">Sinnoh</a>
+          <a class="dropdown-item" [routerLink]="['/pokedexes/original-unova']">Unova</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" [routerLink]="['/pokedexes']">All pokedexes</a>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/moves']">Moves</a>
