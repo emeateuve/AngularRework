@@ -3,6 +3,9 @@ import {PokeserviceService} from "../pokeservice.service";
 import {PokedexesComponent} from "../pokedexes/pokedexes.component";
 import {ActivatedRoute} from "@angular/router";
 
+/* PokéDeclaring jQuery PokéVariables */
+declare var jquery:any;
+declare var $ :any;
 
 @Component({
   selector: 'app-pokedex-detail',
@@ -50,6 +53,8 @@ export class PokedexDetailComponent implements OnInit {
     }
 
   }
-
+  pokeCollapse(){
+    $('.collapse').collapse('hide')
+  }
 
 }
