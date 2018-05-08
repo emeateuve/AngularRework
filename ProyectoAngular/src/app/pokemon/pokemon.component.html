@@ -21,19 +21,27 @@
       <li class="list-group-item">Weight: {{pokemon.weight/10}}kg</li>
       <li class="list-group-item">Height: {{pokemon.height/10}}m</li>
       <li class="list-group-item">National Dex ID: {{pokemon.id}}</li>
-      <li class="list-group-item">Type/s: <span *ngFor="let type of pokemonArrayTypes">{{type.type.name}}, </span></li>
+      <li class="list-group-item">Type/s: <span *ngFor="let type of pokemonArrayTypes">{{type.type.name}} </span></li>
 
     </ul>
   </div>
   <div class="card col-lg-3 col-md-3 col-sm-11 col-11" style="display: inline-block; float: left;">
     <div class="card-header">
-      Base stats
+      Base stats on level 1
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item" *ngFor="let pokestat of pokemonArrayStats">{{pokestat.stat.name}}: {{pokestat.base_stat}}</li>
     </ul>
   </div>
-</div>
 
+</div>
+<div class="row" *ngIf="pokemonLoaded">
+  <nav class="col-12">
+    <ul class="pagination col-12">
+      <li class="page-item"><a class="page-link col-6">Previous</a></li>
+      <li class="page-item"><a class="page-link col-6" href="#">Next</a></li>
+    </ul>
+  </nav>
+</div>
 
 
