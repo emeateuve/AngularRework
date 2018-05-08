@@ -1,9 +1,38 @@
-<div *ngIf="!pokemonLoaded" style="height: 100vh; width: 100vw; background-color: rgba(0,0,0,0.5)">
-  <h1>CARGANDO</h1>
-  <img src="../../assets/pikachu_loading.gif">
+<div class="mx-auto" *ngIf="!pokemonLoaded" style="height: 100vh; width: 100vw; background-color: rgba(0,0,0,0.5)">
+  <h1  class="mx-auto">CARGANDO</h1>
+  <img class="mx-auto" src="../../assets/pikachu_loading.gif">
 </div>
-<div *ngIf="pokemonLoaded">
-  <h1>Has buscado {{pokemon.name}}</h1>
+<div class="row my-5 ml-5" *ngIf="pokemonLoaded">
+
+  <div class="card col-lg-3 col-md-3 col-sm-6 col-xs-6 col-12" style="background-color: rgba(255,255,255,0.3);border-color: rgba(0,0,0,0.5);border: 2px solid; display: inline-block; float: left;">
+    <img class="card-img-top" src="{{pokemon.sprites.front_default}}">
+    <hr>
+    <div class="card-body">
+      <p class="card-text">{{pokemon.name}}</p>
+    </div>
+  </div>
+  <div class="card mx-3 col-lg-5 col-md-5 col-sm-5 col-12" style="display: inline-block; float: left;">
+    <div class="card-header">
+      Featured
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Name: {{pokemon.name}}</li>
+      <li class="list-group-item">Base experience: {{pokemon.base_experience}}xp</li>
+      <li class="list-group-item">Weight: {{pokemon.weight/10}}kg</li>
+      <li class="list-group-item">Height: {{pokemon.height/10}}m</li>
+      <li class="list-group-item">National Dex ID: {{pokemon.id}}</li>
+      <li class="list-group-item">Type/s: <span *ngFor="let type of pokemonArrayTypes">{{type.type.name}}, </span></li>
+
+    </ul>
+  </div>
+  <div class="card col-lg-3 col-md-3 col-sm-11 col-11" style="display: inline-block; float: left;">
+    <div class="card-header">
+      Base stats
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item" *ngFor="let pokestat of pokemonArrayStats">{{pokestat.stat.name}}: {{pokestat.base_stat}}</li>
+    </ul>
+  </div>
 </div>
 
 
