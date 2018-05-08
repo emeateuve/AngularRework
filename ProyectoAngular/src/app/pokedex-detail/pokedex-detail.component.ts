@@ -47,12 +47,11 @@ export class PokedexDetailComponent implements OnInit {
       this.pokeBoolean = false;
       this.pokePetition.pokeSearch(pokemon).subscribe(pokeData => {
         this.pokeReturn = pokeData;
-        console.log('Desde el componente de vuelta', pokeData);
         this.pokeBoolean = true;
       })
     }
-
   }
+
   pokeCollapse(){
     $('.collapse').collapse('hide')
   }
