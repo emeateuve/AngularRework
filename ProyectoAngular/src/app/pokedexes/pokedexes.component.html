@@ -1,6 +1,6 @@
-<div class="container"><br>
+<div class="container">
   <div class="row">
-    <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12" *ngFor="let pokedex of pokedexArray" style="height: 400px;display: inline-flex ; position: relative; background-color: rgba(255,255,255,0.4);">
+    <div class="card col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12 pt-5" *ngFor="let pokedex of pokedexArray" style="height: 400px;display: inline-flex ; position: relative; background-color: rgba(255,255,255,0.4);">
       <img class="card-img-top" style="width: 100%; height: 300px;" src="../../assets/{{pokedex.pokeImage}}">
       <div class="card-body">
         <button class="btn-hover color-3 w-100 align-center" [routerLink]="['/pokedexes/' + pokedex.pokedexName]">{{pokedex.pokedexName}} details</button>

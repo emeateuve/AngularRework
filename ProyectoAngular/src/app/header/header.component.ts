@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {PokeserviceService} from "../pokeservice.service";
-
+import {Router} from "@angular/router";
 
 declare var jQuery:any;
 declare var $:any;
@@ -16,9 +16,19 @@ export class HeaderComponent implements OnInit {
   public pokemon: string;
 
 
-  constructor(private pokePetition: PokeserviceService) { }
+  constructor(private pokePetition: PokeserviceService, private pokeRouter: Router) { }
 
   ngOnInit() {
+  }
+
+  pokeEnter(poKey, pokeInput){
+    if(poKey.keyCode == 13){
+      /*Easter pokEgg*/
+      if(pokeInput == '619' || 'mienfoo' || 'Mienfoo'){
+        console.log('BOOYAKA BOOAYA, 619!!')
+      }
+      this.pokeRouter.navigateByUrl('/pokemon/' + pokeInput);
+    }
   }
 
   // buscarPokemon(){

@@ -25,6 +25,7 @@ export class PokedexDetailComponent implements OnInit {
   public pokemonsArray;
   public pokeReturn;
   public pokeBoolean;
+  public pokedexLoaded = false;
 
 
   ngOnInit() {
@@ -39,6 +40,7 @@ export class PokedexDetailComponent implements OnInit {
     this.pokePetition.pokedexesSearch(this.pokedexName).subscribe(pokedexName => {
       this.pokedex = pokedexName;
       this.pokemonsArray = pokedexName.pokemon_entries;
+      this.pokedexLoaded = true;
     });
   };
 
