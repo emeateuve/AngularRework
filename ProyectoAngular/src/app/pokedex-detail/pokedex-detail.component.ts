@@ -2,10 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {PokeserviceService} from "../pokeservice.service";
 import {PokedexesComponent} from "../pokedexes/pokedexes.component";
 import {ActivatedRoute} from "@angular/router";
+import {PokePipePipe} from "../poke-pipe.pipe";
 
 /* PokéDeclaring jQuery PokéVariables */
 declare var jquery: any;
 declare var $: any;
+
+/* PokéPipe */
+
 
 @Component({
   selector: 'app-pokedex-detail',

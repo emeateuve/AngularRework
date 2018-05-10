@@ -17,6 +17,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import { MovesComponent } from './moves/moves.component';
 import { MoreComponent } from './more/more.component';
 import { PokedexDetailComponent } from './pokedex-detail/pokedex-detail.component';
+import { PokePipePipe } from './poke-pipe.pipe';
 
 
 
@@ -41,7 +42,8 @@ const appRoutes: Routes = [
     PokemonComponent,
     MovesComponent,
     MoreComponent,
-    PokedexDetailComponent
+    PokedexDetailComponent,
+    PokePipePipe
   ],
   imports: [
     BrowserModule,
