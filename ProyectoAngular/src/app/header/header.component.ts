@@ -23,11 +23,11 @@ export class HeaderComponent implements OnInit {
 
   pokeEnter(poKey, pokeInput){
     if(poKey.keyCode == 13){
-      /*Easter pokEgg*/
-      if(pokeInput == '619' || 'mienfoo' || 'Mienfoo'){
-        console.log('BOOYAKA BOOAYA, 619!!')
-      }
       this.pokeRouter.navigateByUrl('/pokemon/' + pokeInput);
+    }
+    /*Easter pokEgg*/
+    if(pokeInput === '619' || 'mienfoo' || 'Mienfoo'){
+      console.log('BOOYAKA BOOAYA, 619!!')
     }
   }
 
