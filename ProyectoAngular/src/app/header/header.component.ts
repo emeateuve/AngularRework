@@ -30,13 +30,4 @@ export class HeaderComponent implements OnInit {
       console.log('BOOYAKA BOOAYA, 619!!')
     }
   }
-
-  // buscarPokemon(){
-  //   console.log('Antes de la petición: ');
-  //   this.pokePetition.pokeSearch(this.pokeInput).subscribe(pokeResult =>{
-  //     this.pokemon = pokeResult;
-  //     console.log('Resultado: ', this.pokemon);
-  //   });
-  // }
-
 }

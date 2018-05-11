@@ -9,8 +9,6 @@ import {isUndefined} from "util";
 declare var jquery: any;
 declare var $: any;
 
-/* PokéPipe */
-
 
 @Component({
   selector: 'app-pokedex-detail',

@@ -28,19 +28,8 @@ export class PokemonComponent implements OnInit {
     });
   }
 
-  // pokeHover(pokemon){
-  //   console.log('encima')
-  //   pokemon.setAttribute('src',pokemon.sprites.back_default);
-  // };
-  // pokeUnhover(pokemon){
-  //   console.log('fuera')
-  //   pokemon.setAttribute('src',pokemon.sprites.front_default);
-  // };
-
   loadPokemon() {
     this.pokePetition.pokeSearch(this.pokemonName).subscribe(pokemonData => {
-      console.log('Pokemon buscado: ', pokemonData);
-
       this.pokemon = pokemonData;
       this.pokemonArrayStats = pokemonData.stats;
       this.pokemonArrayAbilities = pokemonData.abilities;
