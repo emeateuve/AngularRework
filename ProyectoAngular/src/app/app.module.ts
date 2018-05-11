@@ -20,7 +20,6 @@ import { PokedexDetailComponent } from './pokedex-detail/pokedex-detail.componen
 import { PokePipePipe } from './poke-pipe.pipe';
 
 
-
 const appRoutes: Routes = [
   {path: '', component: MainComponent},
   {path: 'pokemon', redirectTo: ''},

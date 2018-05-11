@@ -3,6 +3,7 @@ import {PokeserviceService} from "../pokeservice.service";
 import {PokedexesComponent} from "../pokedexes/pokedexes.component";
 import {ActivatedRoute} from "@angular/router";
 import {PokePipePipe} from "../poke-pipe.pipe";
+import {isUndefined} from "util";
 
 /* PokéDeclaring jQuery PokéVariables */
 declare var jquery: any;
@@ -23,6 +24,10 @@ export class PokedexDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute, private pokePetition: PokeserviceService, public pokedexComponent: PokedexesComponent) {
 
   }
+
+  public pokeName;
+  public pokeMinimun;
+  public pokeMaximun;
 
   public pokedexName;
   public pokedex;
@@ -45,7 +50,13 @@ export class PokedexDetailComponent implements OnInit {
       this.pokedex = pokedexName;
       this.pokemonsArray = pokedexName.pokemon_entries;
       this.pokedexLoaded = true;
+
+      this.pokeMinimun = 0;
+      this.pokeMaximun = 151;
+      this.pokeName = '';
     });
+
+
   };
 
   pokeCall(pokemon) {

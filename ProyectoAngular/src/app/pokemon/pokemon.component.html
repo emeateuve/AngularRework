@@ -22,7 +22,6 @@
       <li class="list-group-item">Height: {{pokemon.height/10}}m</li>
       <li class="list-group-item">National Dex ID: {{pokemon.id}}</li>
       <li class="list-group-item">Type/s: <span *ngFor="let type of pokemonArrayTypes">{{type.type.name.charAt(0).toUpperCase()}}{{type.type.name.slice(1)}} </span></li>
-
     </ul>
   </div>
   <div class="card col-lg-3 col-md-3 col-sm-11 col-11" style="display: inline-block; float: left;">

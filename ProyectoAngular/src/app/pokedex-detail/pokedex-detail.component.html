@@ -20,15 +20,15 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="pokeAdvancedName">Starts with</span>
             </div>
-            <input type="text" class="form-control" placeholder="Example: Bulb" aria-label="Username" aria-describedby="pokeAdvancedName">
+            <input type="text" class="form-control" [(ngModel)]="pokeName" placeholder="Example: Bulb" aria-label="Username" aria-describedby="pokeAdvancedName">
             <div class="input-group-prepend ml-5">
               <span class="input-group-text" id="pokeAdvancedStart">From</span>
             </div>
-            <input type="text" class="form-control" placeholder="Example: 35" aria-describedby="pokeAdvancedStart">
+            <input type="text" class="form-control" [(ngModel)]="pokeMinimun" placeholder="Example: 35" aria-describedby="pokeAdvancedStart">
             <div class="input-group-prepend ml-5">
               <span class="input-group-text" id="pokeAdvancedEnd">To</span>
             </div>
-            <input type="text" class="form-control" placeholder="Example: 50" aria-describedby="pokeAdvancedEnd">
+            <input type="text" class="form-control" [(ngModel)]="pokeMaximun" placeholder="Example: 50" aria-describedby="pokeAdvancedEnd">
           </div>
 
         </div>
@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <div id="accordion" class="mt-2" *ngFor="let pokemon of pokemonsArray">
+  <div id="accordion" class="mt-2" *ngFor="let pokemon of pokemonsArray | pokePipe: pokeName:pokeMinimun:pokeMaximun">
     <div class="card col-lg-4 col-md-4 col-sm-6 col-12" style="display: inline-flex; float: left; background-color:rgba(255,255,255,0.7); text-align: center">
       <div class="card-header" id="{{pokemon.entry_number}}">
         <h5 class="mb-0">
